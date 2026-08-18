@@ -192,6 +192,15 @@ textarea {
   line-height: 36px;
 }
 
+.titlebar-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 .titlebar-controls {
   display: flex;
   align-items: center;
@@ -199,8 +208,8 @@ textarea {
   height: 100%;
 }
 
-.titlebar-btn {
-  width: 46px;
+.titlebar-controls .titlebar-btn {
+  width: 48px;
   height: 100% !important;
   border-radius: 0 !important;
   display: flex;
@@ -209,11 +218,15 @@ textarea {
   color: var(--titlebar-text) !important;
 }
 
-.titlebar-btn:hover {
+.titlebar-controls .titlebar-btn .anticon {
+  font-size: 16px;
+}
+
+.titlebar-controls .titlebar-btn:hover {
   background: var(--hover-bg) !important;
 }
 
-.titlebar-btn-close:hover {
+.titlebar-controls .titlebar-btn-close:hover {
   background: #e81123 !important;
   color: #fff !important;
 }

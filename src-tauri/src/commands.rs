@@ -555,7 +555,10 @@ pub(crate) async fn load_library_folders(
 pub(crate) async fn load_library_tracks(
     state: State<'_, AppState>,
 ) -> Result<Vec<AudioTrack>, String> {
-    state.database.load_tracks().await
+    let database = state.database.clone();
+    tauri::async_runtime::spawn_blocking(move || database.load_tracks_blocking())
+        .await
+        .map_err(|error| error.to_string())?
 }
 
 #[tauri::command]

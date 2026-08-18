@@ -236,7 +236,7 @@ impl Database {
         Ok(())
     }
 
-    pub(crate) async fn load_tracks(&self) -> Result<Vec<AudioTrack>, String> {
+    pub(crate) fn load_tracks_blocking(&self) -> Result<Vec<AudioTrack>, String> {
         let connection = self.lock()?;
         let mut statement = connection
             .prepare(

@@ -106,6 +106,7 @@ export default function App() {
     <ConfigProvider
       locale={antLocale}
       theme={{
+        cssVar: {},
         algorithm: resolvedTheme === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,
         token: {
           colorPrimary: "#1677ff",
